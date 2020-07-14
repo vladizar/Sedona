@@ -16,25 +16,25 @@
 
             <nav>
                 <ul class="site-navigation">
-                    <li class="site-navigation__item">
+                    <li class="site-navigation__item site-navigation__item_left-side">
                         <a href="#" class="site-navigation__link">
                             Информация
                         </a>
                     </li>
 
-                    <li class="site-navigation__item">
+                    <li class="site-navigation__item site-navigation__item_left-side">
                         <a href="#" class="site-navigation__link">
                             Фото и видео
                         </a>
                     </li>
 
-                    <li class="site-navigation__item">
+                    <li class="site-navigation__item site-navigation__item_margined-left site-navigation__item_right-side">
                         <a href="#" class="site-navigation__link">
                             Карта штата
                         </a>
                     </li>
 
-                    <li class="site-navigation__item">
+                    <li class="site-navigation__item site-navigation__item_right-side">
                         <a class="site-navigation__link site-navigation__link_active">
                             Гостиницы
                         </a>
@@ -53,17 +53,17 @@
 
                         <ul class="filter__options-list">
                             <li class="filter__option">
-                                <input type="checkbox" name="pool" id="filter-pool" class="filter__checkbox">
+                                <input type="checkbox" name="pool" id="filter-pool" class="filter__checkbox visually-hidden" checked>
                                 <label for="filter-pool" class="filter__label">Бассейн</label>
                             </li>
 
                             <li class="filter__option">
-                                <input type="checkbox" name="parking" id="filter-parking" class="filter__checkbox">
+                                <input type="checkbox" name="parking" id="filter-parking" class="filter__checkbox visually-hidden">
                                 <label for="filter-parking" class="filter__label">Парковка</label>
                             </li>
 
                             <li class="filter__option">
-                                <input type="checkbox" name="wifi" id="filter-wifi" class="filter__checkbox">
+                                <input type="checkbox" name="wifi" id="filter-wifi" class="filter__checkbox visually-hidden">
                                 <label for="filter-wifi" class="filter__label">Wi-fi</label>
                             </li>
                         </ul>
@@ -74,17 +74,17 @@
                         
                         <ul class="filter__options-list">
                             <li class="filter__option">
-                                <input type="checkbox" name="hotel" id="filter-hotel" class="filter__checkbox">
+                                <input type="checkbox" name="hotel" id="filter-hotel" class="filter__checkbox visually-hidden" checked>
                                 <label for="filter-hotel" class="filter__label">Гостиница</label>
                             </li>
 
                             <li class="filter__option">
-                                <input type="checkbox" name="motel" id="filter-motel" class="filter__checkbox">
+                                <input type="checkbox" name="motel" id="filter-motel" class="filter__checkbox visually-hidden" checked>
                                 <label for="filter-motel" class="filter__label">Мотель</label>
                             </li>
 
                             <li class="filter__option">
-                                <input type="checkbox" name="apartments" id="filter-apartments" class="filter__checkbox">
+                                <input type="checkbox" name="apartments" id="filter-apartments" class="filter__checkbox visually-hidden" checked>
                                 <label for="filter-apartments" class="filter__label">Апартаменты</label>
                             </li>
                         </ul>
@@ -96,13 +96,22 @@
                         <div class="filter__range-inputs">
                             <div class="filter__input-group">
                                 <label for="filter-price-min" class="filter__label">От</label>
-                                <input type="text" name="price-min" id="filter-price-min" class="filter__range-input">
+                                <input type="text" value="0" name="price-min" id="filter-price-min" class="filter__range-input" required>
                             </div>
 
                             <div class="filter__input-group">
                                 <label for="filter-price-max" class="filter__label">До</label>
-                                <input type="text" name="price-max" id="filter-price-max" class="filter__range-input">
+                                <input type="text" value="3000" name="price-max" id="filter-price-max" class="filter__range-input" required>
                             </div>
+                        </div>
+
+                        <div class="filter__range-controls range-controls">
+                            <div class="range-controls__scale">
+                                <div class="range-controls__bar"></div>
+                            </div>
+
+                            <div class="range-controls__toggle range-controls__toggle_min" tabindex="0"></div>
+                            <div class="range-controls__toggle range-controls__toggle_max" tabindex="0"></div>
                         </div>
 
                         <button class="filter__submit-button" type="submit">Показать</button>
@@ -117,7 +126,7 @@
 
                 <ul class="sort__options-list sort__options-list_sort-by">
                     <li class="sort__option">
-                        <a href="#" class="sort__option-link">По цене</a>
+                        <a class="sort__option-link sort__option-link_active">По цене</a>
                     </li>
 
                     <li class="sort__option">
@@ -130,15 +139,17 @@
                 </ul>
 
                 <ul class="sort__options-list sort__options-list_sort-from">
-                    <li class="sort__option">
-                        <a href="#" class="sort__option-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 10"><path class="sort__dir-button sort__dir-button_active" fill="#231F20" d="M5.5 10L0 0h11"/></svg>
+                    <li class="sort__option sort__option_small-margin">
+                        <a href="#" class="sort__option-link sort__option-link_no-border sort__option-link_rotated">
+                            <span class="visually-hidden">От меньшего к большему</span>
+                            <svg class="sort__dir-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
                         </a>
                     </li>
 
                     <li class="sort__option">
-                        <a href="#" class="sort__option-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 10"><path class="sort__dir-button sort__dir-button_up" fill="#231F20" d="M5.5 10L0 0h11"/></svg>
+                        <a class="sort__option-link sort__option-link_no-border">
+                            <span class="visually-hidden">От большего к меньшему</span>
+                            <svg class="sort__dir-button sort__dir-button_active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 10"><path fill="#231F20" d="M5.5 10L0 0h11"/></svg>
                         </a>
                     </li>
                 </ul>
@@ -152,7 +163,9 @@
                         <img src="img/content/hotel-amara.jpg" alt="Отель Amara Resort & Spa" width="135" height="90" class="catalog__item-image">
 
                         <div class="catalog__item-description">
-                            <h3 class="catalog__item-name">Amara Resort & Spa</h3>
+                            <h3 class="catalog__item-name">
+                                <a href="#" class="catalog__item-link">Amara Resort & Spa</a>
+                            </h3>
 
                             <p class="catalog__item-type">Гостиница</p>
 
@@ -171,14 +184,17 @@
                                 <div class="stars-wrapper__star"></div>
                             </div>
                             
-                            <p class="button catalog__item-points">Рейтинг: 8,5</p>
+                            <p class="catalog__item-points">Рейтинг: 8,5</p>
                         </div>
                     </li>
+                    
                     <li class="catalog__item">
                         <img src="img/content/hotel-desert.jpg" alt="Мотель Desert Quail Inn" width="135" height="90" class="catalog__item-image">
                         
                         <div class="catalog__item-description">
-                            <h3 class="catalog__item-name">Desert Quail Inn</h3>
+                            <h3 class="catalog__item-name">
+                                <a href="#" class="catalog__item-link">Desert Quail Inn</a>
+                            </h3>
 
                             <p class="catalog__item-type">Мотель</p>
 
@@ -196,14 +212,17 @@
                                 <div class="stars-wrapper__star"></div>
                             </div>
 
-                            <p class="button catalog__item-points">Рейтинг: 8,9</p>
+                            <p class="catalog__item-points">Рейтинг: 8,9</p>
                         </div>
                     </li>
+                    
                     <li class="catalog__item">
                         <img src="img/content/hotel-villas.jpg" alt="Аппартаменты Villas at Poco Diablo" width="135" height="90" class="catalog__item-image">
                         
                         <div class="catalog__item-description">
-                            <h3 class="catalog__item-name">Villas at Poco Diablo</h3>
+                            <h3 class="catalog__item-name">
+                                <a href="#" class="catalog__item-link">Villas at Poco Diablo</a>
+                            </h3>
 
                             <p class="catalog__item-type">Апартаменты</p>
                             
@@ -220,7 +239,7 @@
                                 <div class="stars-wrapper__star"></div>
                             </div>
 
-                            <p class="button catalog__item-points">Рейтинг: 9,2</p>
+                            <p class="catalog__item-points">Рейтинг: 9,2</p>
                         </div>
                     </li>
                 </ul>
@@ -229,8 +248,8 @@
         </main>
 
         <footer class="footer">
-            <div class="footer__contacts">
-                <p class="footer__column">
+            <div class="footer__column">
+                <p class="footer__text">
                     #visitSEDONA
                 </p>
 
@@ -240,9 +259,23 @@
             </div>
 
             <div class="footer__column">
-                <a href="#" class="footer__social-link"></a>
-                <a href="#" class="footer__social-link"></a>
-                <a href="#" class="footer__social-link"></a>
+                <a href="#" class="footer__social-link footer__social-link_twitter">
+                    <span class="visually-hidden">Twitter</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 15"><path fill="#FFF" d="M10.95.14a3.1 3.1 0 013.58 1.18c.67-.23 1.33-.48 2-.7a2.35 2.35 0 01-.85 1.76c.69.17 1.3-.49 1.3-.49-.16 1-1 1.79-1.56 2.03C15.2 10.67 12.25 15.13 5.34 15H4.9c-.41 0-4.17-.46-4.9-1.89 2.27.2 3.9-.42 4.7-1.18-.97-.3-2.69-.47-2.99-2.95.35.11.57.23 1.2.12C1.7 8.25.36 7.53.44 5.33a1.9 1.9 0 001.34.47C1.09 5.56-.18 2.44.89.85c1.82 1.85 3.74 3.6 7.16 3.77.2-2.29 1.13-3.83 2.9-4.48z"/></svg>
+                </a>
+
+                <a href="#" class="footer__social-link footer__social-link_facebook">
+                    <span class="visually-hidden">Facebook</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 22"><path fill="#FFF" d="M12 4V0H8a4 4 0 00-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"/></svg>
+                </a>
+
+                <a href="#" class="footer__social-link footer__social-link_youtube">
+                    <span class="visually-hidden">Youtube</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 16"><path fill="#FFF" d="M17 0H3a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V3a3 3 0 00-3-3zM6.03 12V4L15 8l-8.98 4z"/></svg>
+                </a>
             </div>
 
             <div class="footer__column">
@@ -253,7 +286,5 @@
             </div>
         </footer>
     </div>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
