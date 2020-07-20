@@ -179,10 +179,10 @@ a:not([href])
 
     &__item
     {
-        width: 240px;
+        width: 230px;
         padding: 15px;
 
-        &_margined-left
+        &:nth-of-type(3)
         {
             margin-left: auto;
         }
@@ -332,17 +332,17 @@ a:not([href])
     &__image-wrapper
     {
         width: 800px;
-        background-repeat: no-repeat;
-        background-position: 0 0;
         background-color: $average-background-real-town;
-        background-image: url(../img/background/real-town.jpg);
-        background-size: cover;
 
         &_bridge
         {
             background-color: $average-background-damn-bridge;
-            background-image: url(../img/background/damn-bridge.jpg);
         }
+    }
+
+    &__image
+    {
+        display: block;
     }
 
     &__sublist
@@ -700,7 +700,7 @@ a:not([href])
 
         &_reversed-animation
         {
-            animation: bounce 1.2s reverse;
+            animation: bounce 0.85s reverse;
         }
     }
 }

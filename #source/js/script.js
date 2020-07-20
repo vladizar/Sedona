@@ -33,6 +33,6 @@ findHotelsFormShowButton.onclick = function ()
 
             // Remove animation cooldown
             cooldown = false;
-        }, 1190);
+        }, 840);
     }
 }
